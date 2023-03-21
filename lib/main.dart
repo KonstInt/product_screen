@@ -134,6 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //margin: EdgeInsets.symmetric(horizontal: 12),
 
             color: Colors.grey,
+            //TODO: FittedBox
             child: FittedBox(
               fit: BoxFit.fill,
               child: Image.network(urlImage),
