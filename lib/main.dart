@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
       price: 2.3,
       description:
           'Дом расположен в ЗЖМ, мкр Левенцовский, вблизи остановки общественного транспорта. Рядом расположены гипермаркеты "Магнит", "Пятерочка", "Лента", "Метро", отделение "Сбербанка". В районе работают 6 детских садов, 1 школа. Есть собственная управляющая компания.',
-      productSpec: ProductSpec(plan: 'Смежная', topHeigth: 2.5, repair: 'Без ремонта') 
-      );
+      productSpec:
+          ProductSpec(plan: 'Смежная', topHeigth: 2.5, repair: 'Без ремонта'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(top: 19),
+            margin: const EdgeInsets.only(top: 19),
             child: Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
@@ -113,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   itemCount: product.urlImages.length,
                   itemBuilder: (context, index, realIndex) {
                     final urlImage = product.urlImages[index];
-                    return buildImage(urlImage, index, product.urlImages.length);
+                    return buildImage(
+                        urlImage, index, product.urlImages.length);
                   },
                   options: CarouselOptions(
                       viewportFraction: 1,
@@ -122,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           )),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 10),
+                  margin: const EdgeInsets.only(bottom: 10),
                   width: 35,
                   height: 16,
                   decoration: const BoxDecoration(
@@ -131,24 +132,73 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Center(
                     child: Text(
                       "${active_index + 1}/${product.urlImages.length}",
-                      style: const TextStyle(fontSize: 9, color: Colors.white),
+                      style: const TextStyle(fontSize: 9, color: Colors.white, letterSpacing: 0.35),
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          
           Container(
-           // padding: 
+            color: Colors.white,
+            width: double.infinity,
+            padding: EdgeInsets.only(left: 16, right: 16, top: 12),
+            // padding:
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(product.header, style: const TextStyle(fontFamily: 'SanSans', color: Colors.black, fontSize: 18)),
+                Text(product.header,
+                    style: const TextStyle(
+                        fontFamily: 'Open Sans',
+                        color: Colors.black,
+                        fontSize: 18,
+                        letterSpacing: 0.35)),
+                Container(
+                  width: 82,
+                  height: 27,
+                  color: const Color.fromARGB(255, 249, 224, 0),
+                  margin: const EdgeInsets.only(top: 10),
+                  child: Center(
+                      child: Text(
+                          "${product.price.toString().replaceAll('.', ',')} млн ₽",
+                          style: const TextStyle(
+                              fontFamily: 'Open Sans',
+                              color: Colors.black,
+                              letterSpacing: 0.35,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16))),
+                ),
               ],
             ),
           ),
-        
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 15),
+            width: double.infinity,
+            color: Colors.white,
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Описание',
+                  style: TextStyle(
+                      fontFamily: 'Open Sans',
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 18)),
+              Container(
+                margin: const EdgeInsets.only(top: 15),
+                child: Center(
+                    child: Text(
+                        product.description,
+                        style: const TextStyle(
+                            fontFamily: 'Open Sans',
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.35,
+                            fontSize: 12))),
+              ),
+            ],
+          ))
         ],
       ),
     );
