@@ -3,13 +3,7 @@ class Product{
   String header;
   double price;
   String description;
-  ProductSpec productSpec;
+  Map<String, Map<String, String>> productSpec;
   Product({required this.urlImages, required this.header, required this.price, required this.description, required this.productSpec});
 }
 
-class ProductSpec{
-  String plan;
-  double topHeigth;
-  String repair;
-  ProductSpec({ required this.plan, required this.topHeigth, required this.repair});
-}
