@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobyte_task1/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AvitoRedirectButton extends StatefulWidget {
@@ -26,19 +27,20 @@ class _AvitoRedirectButtonState extends State<AvitoRedirectButton> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.white,
+      color: kPrimaryColor,
       margin: const EdgeInsets.only(top: 10, bottom: 10),
       child: TextButton(
           onPressed: () => _launchUrl(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/png/avito_logo.png"),
-              const Text("Смотреть на Avito",
-                  style: TextStyle(
-                      fontFamily: 'Open Sans',
-                      color: Colors.black,
-                      letterSpacing: 0.35,
+              Container(
+                margin: const EdgeInsets.only(right: 10),
+                child: Image.asset("assets/png/avito_logo.png")),
+              Text("Смотреть на Avito",
+                  style: 
+                      Theme.of(context).textTheme.headline1?.copyWith(
+                      letterSpacing: -0.03,
                       fontWeight: FontWeight.w400,
                       fontSize: 15)),
             ],
@@ -47,7 +49,7 @@ class _AvitoRedirectButtonState extends State<AvitoRedirectButton> {
   }
 
   Future<void> _launchUrl() async {
-    if (!await launchUrl(_url, mode: LaunchMode.inAppWebView)) {
+    if (!await launchUrl(_url, mode: LaunchMode.externalApplication,)) {
       throw Exception('Could not launch $_url');
     }
   }

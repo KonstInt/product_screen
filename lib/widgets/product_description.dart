@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:mobyte_task1/utils/constants.dart';
 
 import 'more_info.dart';
 
@@ -11,34 +10,33 @@ class ProductDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-                margin: const EdgeInsets.only(top: 10),
-                padding: const EdgeInsets.only(
-                    left: 16, right: 16, top: 15, bottom: 15),
-                width: double.infinity,
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Описание',
-                        style: TextStyle(
-                            fontFamily: 'Open Sans',
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18)),
-                    Container(
-                      margin: const EdgeInsets.only(top: 15),
-                      child: Center(
-                          child: Text(description,
-                              style: const TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 0.35,
-                                  //height: 17.0,
-                                  fontSize: 12))),
-                    ),
-                    const MoreInfoButton(),
-                  ],
-                ));
+        margin: const EdgeInsets.only(top: 10),
+        padding:
+            const EdgeInsets.only(left: 16, right: 16, top: 15, bottom: 5),
+        width: double.infinity,
+        color: kPrimaryColor,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //Header
+            Text('Описание',
+                style: Theme.of(context).textTheme.headline1?.copyWith(
+                    letterSpacing: 0.02,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18)),
+            //Description of the product
+            Container(
+              margin: const EdgeInsets.only(top: 11,),
+              child: Center(
+                  child: Text(description,
+                      style: Theme.of(context).textTheme.headline1?.copyWith(
+                      letterSpacing: 0.03,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12))),
+            ),
+            //Button for more information
+            const MoreInfoButton(),
+          ],
+        ));
   }
 }

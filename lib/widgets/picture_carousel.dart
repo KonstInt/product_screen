@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:mobyte_task1/utils/constants.dart';
 
 class ImageCarousel extends StatefulWidget {
   List<String> productImages;
@@ -39,14 +40,14 @@ class _ImageCarouselState extends State<ImageCarousel> {
                     width: 35,
                     height: 16,
                     decoration: const BoxDecoration(
-                        color: Color.fromARGB(102, 0, 0, 0),
+                        color: Color.fromARGB(153, 0, 0, 0),
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     child: Center(
                       child: Text(
                         "${activeIndex + 1}/${widget.productImages.length}",
                         style: const TextStyle(
                             fontSize: 9,
-                            color: Colors.white,
+                            color: kPrimaryColor,
                             letterSpacing: 0.35),
                       ),
                     ),
@@ -67,12 +68,13 @@ class _ImageCarouselState extends State<ImageCarousel> {
             child: Image.network(
               urlImage,
               fit: BoxFit.fill,
+              
               loadingBuilder: (BuildContext context, Widget child,
                   ImageChunkEvent? loadingProgress) {
                 if (loadingProgress == null) return child;
                 return const Center(
                   child: CircularProgressIndicator(
-                    color: Colors.black,
+                    color: kPrimaryTextColor,
                   ),
                 );
               },

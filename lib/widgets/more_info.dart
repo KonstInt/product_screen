@@ -8,18 +8,23 @@ class MoreInfoButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonBar(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SvgPicture.asset("assets/icons/row_down.svg"),
-          const Text("Подробнее", style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  color: Color.fromARGB(255, 0, 122, 255),
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 0.35,
-                                  //height: 17.0,
-                                  fontSize: 12))
-        ],
-    );
+    return MaterialButton(
+        onPressed: () {},
+        minWidth: 0,
+        padding: EdgeInsets.zero,
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              "assets/icons/row_down.svg",
+              color: Theme.of(context).primaryIconTheme.color,
+            ),
+            const SizedBox(width: 10),
+            Text("Подробнее",
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                    letterSpacing: -0.03,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12))
+          ],
+        ));
   }
 }

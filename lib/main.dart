@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobyte_task1/models/product.dart';
+import 'package:mobyte_task1/utils/constants.dart';
+import 'package:mobyte_task1/utils/theme.dart';
 import 'package:mobyte_task1/widgets/avito_redirect_button.dart';
 import 'package:mobyte_task1/widgets/picture_carousel.dart';
 import 'package:mobyte_task1/widgets/product_description.dart';
@@ -25,9 +27,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Предложение',
           // You can use the library anywhere in the app even in theme
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+          theme: basicThemeData(),
           home: child,
         );
       },
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
         "assets/icons/top.svg": {"Высота потолков": "От 2,5м"},
         "assets/icons/repair.svg": {"Ремонт": "Без ремонта"}
       },
-      path: "/rostov-na-donu/kvartiry/kvartira-studiya_31m_2232et._2601517511",
+      path: "/",
       place: "Центр (Кировский р-н.), Очаковская, 39");
   @override
   Widget build(BuildContext context) {
@@ -69,21 +69,22 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: const TextStyle(color: Colors.black),
+          style:  Theme.of(context).textTheme.headline1?.copyWith(
+                      letterSpacing: -0.02,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: kPrimaryColor,
         actions: <Widget>[
           IconButton(
-            color: const Color(0xFF007AFF),
+            color: Theme.of(context).primaryIconTheme.color,
             icon: SvgPicture.asset("assets/icons/share.svg"),
-            tooltip: 'Show Snackbar',
             onPressed: () {},
           ),
           IconButton(
-            color: const Color(0xFF007AFF),
+            color: Theme.of(context).primaryIconTheme.color,
             icon: SvgPicture.asset("assets/icons/three_dots.svg"),
-            tooltip: 'Go to the next page',
             onPressed: () {},
           ),
         ],
