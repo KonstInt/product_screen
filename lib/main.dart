@@ -1,10 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobyte_task1/models/product.dart';
-import 'package:mobyte_task1/widgets/more_info.dart';
+import 'package:mobyte_task1/widgets/avito_redirect_button.dart';
 import 'package:mobyte_task1/widgets/picture_carousel.dart';
 import 'package:mobyte_task1/widgets/product_description.dart';
 import 'package:mobyte_task1/widgets/product_header.dart';
@@ -62,7 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
         "assets/icons/plan.svg": {"Планировка": "Смежная"},
         "assets/icons/top.svg": {"Высота потолков": "От 2,5м"},
         "assets/icons/repair.svg": {"Ремонт": "Без ремонта"}
-      });
+      },
+      path: "/rostov-na-donu/kvartiry/kvartira-studiya_31m_2232et._2601517511",
+      place: "Центр (Кировский р-н.), Очаковская, 39");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,29 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ImageCarousel(productImages: product.urlImages),
             ProductHeader(
-                productHeader: product.header, productPrice: product.price),
+                productHeader: product.header, productPrice: product.price, productPlacement: product.place,),
             ProductDescription(description: product.description),
             ProductSpec(productSpec: product.productSpec),
-            Container(
-              width: double.infinity,
-              color: Colors.white,
-              margin: const EdgeInsets.only(top: 10, bottom: 10),
-              child: TextButton(
-                  onPressed: () => {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/png/avito_logo.png"),
-                      const Text("Смотреть на Avito",
-                          style: TextStyle(
-                              fontFamily: 'Open Sans',
-                              color: Colors.black,
-                              letterSpacing: 0.35,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15)),
-                    ],
-                  )),
-            )
+            AvitoRedirectButton(path: product.path),
           ],
         ),
       ),
