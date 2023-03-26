@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MoreInfoButton extends StatelessWidget {
@@ -21,9 +22,9 @@ class MoreInfoButton extends StatelessWidget {
             const SizedBox(width: 10),
             Text("Подробнее",
                 style: Theme.of(context).textTheme.headline2?.copyWith(
-                    letterSpacing: -0.03,
+                    letterSpacing: -0.03.sp,
                     fontWeight: FontWeight.w400,
-                    fontSize: 12))
+                    fontSize: 12.sp))
           ],
         ));
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobyte_task1/utils/constants.dart';
 
@@ -26,9 +27,9 @@ class ProductHeader extends StatelessWidget {
           //Heder of the product
           Text(productHeader,
                 style:  Theme.of(context).textTheme.headline1?.copyWith(
-                        letterSpacing: -0.01,
+                        letterSpacing: -0.01.sp,
                         fontWeight: FontWeight.w400,
-                        fontSize: 18,)),
+                        fontSize: 18.sp,)),
           
           //Location of the product
           Container(
@@ -39,24 +40,24 @@ class ProductHeader extends StatelessWidget {
                   SvgPicture.asset("assets/icons/geo.svg", color: Theme.of(context).primaryIconTheme.color),
                   Text(productPlacement,
                       style:  Theme.of(context).textTheme.headline2?.copyWith(
-                      letterSpacing: -0.01,
+                      letterSpacing: -0.01.sp,
                       fontWeight: FontWeight.w400,
-                      fontSize: 13)),
+                      fontSize: 13.sp)),
                 ],
               )),
           //Price of the product
           Container(
-            width: 82,
-            height: 27,
+            width: 82.sp,
+            height: 27.sp,
             color: const Color.fromARGB(255, 249, 224, 0),
             margin: const EdgeInsets.only(top: 10, bottom: 15),
             child: Center(
                 child: Text(
                     "${productPrice.toString().replaceAll('.', ',')} млн ₽",
                     style: Theme.of(context).textTheme.headline1?.copyWith(
-                      letterSpacing: -0.01,
+                      letterSpacing: -0.01.sp,
                       fontWeight: FontWeight.w600,
-                      fontSize: 16))),
+                      fontSize: 16.sp))),
           ),
         ],
       ),

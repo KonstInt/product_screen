@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobyte_task1/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -25,26 +26,28 @@ class _AvitoRedirectButtonState extends State<AvitoRedirectButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      color: kPrimaryColor,
-      margin: const EdgeInsets.only(top: 10, bottom: 10),
-      child: TextButton(
-          onPressed: () => _launchUrl(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(right: 10),
-                child: Image.asset("assets/png/avito_logo.png")),
-              Text("Смотреть на Avito",
-                  style: 
-                      Theme.of(context).textTheme.headline1?.copyWith(
-                      letterSpacing: -0.03,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15)),
-            ],
-          )),
+    return SafeArea(
+      child: Container(
+        width: double.infinity,
+        color: kPrimaryColor,
+        margin: const EdgeInsets.only(top: 10, bottom: 10),
+        child: TextButton(
+            onPressed: () => _launchUrl(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(right: 10),
+                  child: Image.asset("assets/png/avito_logo.png")),
+                Text("Смотреть на Avito",
+                    style: 
+                        Theme.of(context).textTheme.headline1?.copyWith(
+                        letterSpacing: -0.03.sp,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15.sp)),
+              ],
+            )),
+      ),
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobyte_task1/utils/constants.dart';
 
 import 'more_info.dart';
@@ -23,7 +24,7 @@ class ProductDescription extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline1?.copyWith(
                     letterSpacing: 0.02,
                     fontWeight: FontWeight.w700,
-                    fontSize: 18)),
+                    fontSize: 18.sp)),
             //Description of the product
             Container(
               margin: const EdgeInsets.only(top: 11,),
@@ -32,7 +33,7 @@ class ProductDescription extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline1?.copyWith(
                       letterSpacing: 0.03,
                       fontWeight: FontWeight.w400,
-                      fontSize: 12))),
+                      fontSize: 12.sp))),
             ),
             //Button for more information
             const MoreInfoButton(),
