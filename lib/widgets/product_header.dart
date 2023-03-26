@@ -18,7 +18,7 @@ class ProductHeader extends StatelessWidget {
     return Container(
       color: kPrimaryColor,
       width: double.infinity,
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 12),
+      padding: EdgeInsets.only(left: 16.sp, right: 16.sp, top: 12.sp),
       // padding:
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class ProductHeader extends StatelessWidget {
           
           //Location of the product
           Container(
-              margin: const EdgeInsets.only(top: 4),
+              margin: EdgeInsets.only(top: 5.sp),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -50,7 +50,7 @@ class ProductHeader extends StatelessWidget {
             width: 82.sp,
             height: 27.sp,
             color: const Color.fromARGB(255, 249, 224, 0),
-            margin: const EdgeInsets.only(top: 10, bottom: 15),
+            margin: EdgeInsets.only(top: 10.sp, bottom: 15.sp),
             child: Center(
                 child: Text(
                     "${productPrice.toString().replaceAll('.', ',')} млн ₽",

@@ -12,9 +12,9 @@ class ProductSpec extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 10),
+        margin: EdgeInsets.only(top: 10.sp),
         padding:
-            const EdgeInsets.only(left: 16, right: 16, top: 15, bottom: 15),
+             EdgeInsets.only(left: 16.sp, right: 16.sp, top: 15.sp, bottom: 15.sp),
         width: double.infinity,
         color: kPrimaryColor,
         child: Column(
@@ -27,7 +27,7 @@ class ProductSpec extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                     fontSize: 18.sp)),
             Container(
-                margin: const EdgeInsets.only(top: 10, bottom: 10),
+                margin: EdgeInsets.only(top: 10.sp, bottom: 10.sp),
                 child: Text("Об объекте",
                     style: Theme.of(context).textTheme.headline1?.copyWith(
                         color: kSecondaryTextColor,
@@ -60,10 +60,10 @@ class ProductSpec extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
-                margin: const EdgeInsets.only(left: 10),
+                margin: EdgeInsets.only(left: 10.sp),
                 child: SvgPicture.asset(icon, color: Theme.of(context).iconTheme.color)),
               Container(
-                margin: const EdgeInsets.only(left: 10,  top: 10, bottom: 5),
+                margin: EdgeInsets.only(left: 10.sp,  top: 10.sp, bottom: 5.sp),
                 child: Text(title,
                     style: Theme.of(context).textTheme.headline1?.copyWith(
                     letterSpacing: -0.03.sp,
@@ -72,7 +72,7 @@ class ProductSpec extends StatelessWidget {
               ),
               const Spacer(),
               Container(
-                margin: const EdgeInsets.only(left: 10, top: 10, bottom: 5),
+                margin: EdgeInsets.only(left: 10.sp, top: 10.sp, bottom: 5.sp),
                 child: Text(res,
                     style: Theme.of(context).textTheme.headline1?.copyWith(
                     letterSpacing: -0.03.sp,

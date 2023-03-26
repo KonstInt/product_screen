@@ -11,9 +11,9 @@ class ProductDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 10),
+        margin:  EdgeInsets.only(top: 10.sp),
         padding:
-            const EdgeInsets.only(left: 16, right: 16, top: 15, bottom: 5),
+             EdgeInsets.only(left: 16.sp, right: 16.sp, top: 15.sp, bottom: 5.sp),
         width: double.infinity,
         color: kPrimaryColor,
         child: Column(
@@ -22,16 +22,16 @@ class ProductDescription extends StatelessWidget {
             //Header
             Text('Описание',
                 style: Theme.of(context).textTheme.headline1?.copyWith(
-                    letterSpacing: 0.02,
+                    letterSpacing: 0.02.sp,
                     fontWeight: FontWeight.w700,
                     fontSize: 18.sp)),
             //Description of the product
             Container(
-              margin: const EdgeInsets.only(top: 11,),
+              margin: EdgeInsets.only(top: 11.sp,),
               child: Center(
                   child: Text(description,
                       style: Theme.of(context).textTheme.headline1?.copyWith(
-                      letterSpacing: 0.03,
+                      letterSpacing: 0.03.sp,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp))),
             ),

@@ -11,7 +11,7 @@ class MoreInfoButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
         onPressed: () {},
-        minWidth: 0,
+        minWidth: 0.sp,
         padding: EdgeInsets.zero,
         child: Row(
           children: [
@@ -19,7 +19,7 @@ class MoreInfoButton extends StatelessWidget {
               "assets/icons/row_down.svg",
               color: Theme.of(context).primaryIconTheme.color,
             ),
-            const SizedBox(width: 10),
+            SizedBox(width: 10.sp),
             Text("Подробнее",
                 style: Theme.of(context).textTheme.headline2?.copyWith(
                     letterSpacing: -0.03.sp,

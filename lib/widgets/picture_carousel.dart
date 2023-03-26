@@ -19,7 +19,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
   Widget build(BuildContext context) {
     
     return  Container(
-              margin: const EdgeInsets.only(top: 19),
+              margin: EdgeInsets.only(top: 19.sp),
               child: Stack(
                 alignment: AlignmentDirectional.bottomCenter,
                 children: [
@@ -37,19 +37,19 @@ class _ImageCarouselState extends State<ImageCarousel> {
                             )),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    width: 35,
-                    height: 16,
+                    margin: EdgeInsets.only(bottom: 10.sp),
+                    width: 35.sp,
+                    height: 16.sp,
                     decoration: const BoxDecoration(
                         color: Color.fromARGB(153, 0, 0, 0),
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     child: Center(
                       child: Text(
                         "${activeIndex + 1}/${widget.productImages.length}",
-                        style: const TextStyle(
-                            fontSize: 9,
+                        style: TextStyle(
+                            fontSize: 9.sp,
                             color: kPrimaryColor,
-                            letterSpacing: 0.35),
+                            letterSpacing: 0.35.sp),
                       ),
                     ),
                   ),
@@ -64,8 +64,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 235,
-            margin: const EdgeInsets.only(left: 15, right: 14),
+            height: 235.sh,
+            margin: EdgeInsets.only(left: 15.sp, right: 14.sp),
             child: Image.network(
               urlImage,
               fit: BoxFit.fill,

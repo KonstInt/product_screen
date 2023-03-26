@@ -30,14 +30,14 @@ class _AvitoRedirectButtonState extends State<AvitoRedirectButton> {
       child: Container(
         width: double.infinity,
         color: kPrimaryColor,
-        margin: const EdgeInsets.only(top: 10, bottom: 10),
+        margin: EdgeInsets.only(top: 10.sp, bottom: 10.sp),
         child: TextButton(
             onPressed: () => _launchUrl(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(right: 10),
+                  margin: EdgeInsets.only(right: 10.sp),
                   child: Image.asset("assets/png/avito_logo.png")),
                 Text("Смотреть на Avito",
                     style: 
